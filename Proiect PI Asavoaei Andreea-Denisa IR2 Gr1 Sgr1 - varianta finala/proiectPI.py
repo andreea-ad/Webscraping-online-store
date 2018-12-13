@@ -9,8 +9,7 @@ def construireListaProduse(soupSite):
 			s=containerTitle.get("title")
 			pos=s.find(",")
 			if(pos<0):
-				print("O eroare s-a produs la parsarea titlurilor produselor!")
-				return 0
+				continue
 			productDict["Titlu"]=s[0:pos]
 		for containerSale in containerProduct.findAll("div",{"class":"Badge"}):
 			productDiscount=containerSale.find("div",class_="Badge-reducere")
@@ -156,19 +155,19 @@ def mainFunction():
 	#Creare tabel
 	scriereInFisierCSV(list1)
 	appendInFisierCSV(list2)
-	#appendInFisierCSV(list3)
-	#appendInFisierCSV(list4)
-	#appendInFisierCSV(list5)
+	appendInFisierCSV(list3)
+	appendInFisierCSV(list4)
+	appendInFisierCSV(list5)
 	#appendInFisierCSV(list6)
-	#appendInFisierCSV(list7)
-	#appendInFisierCSV(list8)
-	#appendInFisierCSV(list9)
-	#appendInFisierCSV(list10)
-	#appendInFisierCSV(list11)
+	appendInFisierCSV(list7)
+	appendInFisierCSV(list8)
+	appendInFisierCSV(list9)
+	appendInFisierCSV(list10)
+	appendInFisierCSV(list11)
 	#appendInFisierCSV(list12)
 	#appendInFisierCSV(list13)
 	#appendInFisierCSV(list14)
-	#appendInFisierCSV(list15)
+	appendInFisierCSV(list15)
 	#Realizare statistica
 	totalList=list1+list2+list3+list4+list5+list6+list7+list8+list9+list10+list11+list12+list13+list14+list15
 	maxim=pretMaximLista(totalList)
